@@ -1,4 +1,8 @@
 ﻿namespace automation {
+
+    using System;
+    using System.Reflection;
+
     /// <summary>
     /// Application
     /// </summary>
@@ -7,6 +11,11 @@
         /// <summary>
         /// Version Number
         /// </summary>
-        public string Version { get; set; }
+        public string Version {
+            get {
+                // The version of the currenty executing assembly
+                return $"{typeof(string).Assembly.GetName().Version}";
+            }
+        }
     }
 }
